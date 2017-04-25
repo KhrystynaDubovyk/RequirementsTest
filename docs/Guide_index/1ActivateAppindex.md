@@ -100,7 +100,7 @@ This RPC has no additional parameter requirements
 ### Sequence Diagrams
 |||
 Activate App after successful Resumption
-![Activate App Successful Resume](./assets/ActivateAppSuccessfulResume.png)
+<center>![Activate App Successful Resume](./assets/ActivateAppSuccessfulResume.png)</center>
 |||
 |||
 Activate App after failed Resumption
