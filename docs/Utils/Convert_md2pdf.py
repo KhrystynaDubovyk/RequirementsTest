@@ -10,7 +10,7 @@ for i in filelist:
     f.close()
 #Conver link
 temp = open("guidline.md", 'r+')
-for line in md:
+for line in temp:
     line = re.sub(r'(\.\./+.+\.md)','', line)
     f = open("guidlineresult.md", 'a')
     f.write(line)
