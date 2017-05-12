@@ -7,6 +7,7 @@ for i in filelist:
     print i
     f = open('guidline.md', 'a')
     f.write((open(i, 'r')).read())
+    f.write("\n")
     f.close()
 #Conver link
 temp = open("guidline.md", 'r+')
