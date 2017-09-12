@@ -10,7 +10,7 @@ _Steps:_
 1. User connects the same device connects over USB
 
 _Expected:_  
-2. SDL receives signal about USB connection of the same device [SDL receives `<UUID>` of the connected device]  
+2. SDL receives signal about USB connection of the same device [HMI sends `<UUID>` of the connected device to SDL]  
 3. SDL receives signal about transport switch of the same device  
 4. SDL starts <AppTransportChangeTimer> + <AppTransportChangeTimerAddition>*N reconnection timer
 
