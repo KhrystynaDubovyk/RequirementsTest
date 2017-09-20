@@ -1,6 +1,6 @@
 
 ## Description:
-As a mobile app I want to get all related data to my "hashID" after transport switching/re-registration
+_As a mobile app I want to get all related data to my "hashID" after transport switching/re-registration._
 
 
 ## Related Diagrams:
