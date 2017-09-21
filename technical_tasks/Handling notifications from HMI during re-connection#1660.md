@@ -1,4 +1,5 @@
 ## Description:
+_As a mobile app I want to receive responses to my requests, my notifications to be delivered after transport switching/re-registration._ 
 
 _Responses to any requests made by the app just prior to the transport switch would be discarded by SDL Core. If the user triggers any interaction to the app, such interactions will be buffered by SDL Core till the app reconnects (within reconnection timeout period) at which point the requests will be sent to the app or till the expiry of the reconnection timer after which the requests will be discarded. HMI can use the UpdateDeviceList request from SDL core to display any message to the user informing about the transport switch._
 
