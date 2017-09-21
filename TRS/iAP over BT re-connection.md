@@ -56,5 +56,5 @@ In case iOS device was connected over USB
 and USB connection was lost  
 
 SDL must:
-- NOT to start "AppTransportChangeTimer" + "AppTransportChangeTimerAddition"*N timer for reconnection  
+- NOT start "AppTransportChangeTimer" + "AppTransportChangeTimerAddition"*N timer for reconnection  
 *Note:* In case of USB connection lost, SDL must proceed with unexpected disconnect flow 
