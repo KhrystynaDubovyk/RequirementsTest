@@ -58,3 +58,21 @@ and USB connection was lost
 SDL must:
 - NOT start "AppTransportChangeTimer" + "AppTransportChangeTimerAddition"*N timer for reconnection  
 *Note:* In case of USB connection lost, SDL must proceed with unexpected disconnect flow 
+
+## Non-Functional Requirements to SDL:
+
+### .ini file change
+
+1. 
+``` xml
+[IAP] 
+; defines the timeout for waiting the mobile app to reconnect between Bluetooth and USB transports change
+"AppTransportChangeTimer" = 500 ms
+```
+
+2. 
+```xml
+[IAP] 
+"AppTransportChangeTimerAddition" = 0ms
+Defines the timeout  for waiting of every mobile app to reconnect between Bluetooth and USB transports change in case the number of connected apps is more than one
+```
