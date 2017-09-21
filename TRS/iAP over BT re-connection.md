@@ -10,7 +10,7 @@ SDL must:
 
 2.  
 In case mobile app sends `<RegisterAppInterface>` during "AppTransportChangeTimer" + "AppTransportChangeTimerAddition"*N timer
-and "UUID" and appID parameters match with closed session
+and "UUID" and "appID" parameters match with closed session
 
 SDL must:
 - consider such app as re-registered app
