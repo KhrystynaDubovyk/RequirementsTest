@@ -2,7 +2,8 @@
 
 ## Description:
 
-_As a mobile app I want to_ 
+_As a mobile app I want to_  
+As an iOS device I want to be able to register apps on the Head Unit wirelessly using Bluetooth and to change transports seamlessly
 
 ## Detailed description:
 
