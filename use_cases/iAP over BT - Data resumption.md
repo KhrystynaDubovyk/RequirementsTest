@@ -36,8 +36,4 @@ Since the app provides a valid hash id, SDL core will perform data resumption.
 
 
 
-
-
-**Alternative flow 1:**
-
 **_Note:_**
