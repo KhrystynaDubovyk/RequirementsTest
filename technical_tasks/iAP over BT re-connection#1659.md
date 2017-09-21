@@ -1,23 +1,6 @@
 ## Description:
 _As an iOS device I want to be able to register apps on the Head Unit wirelessly using Bluetooth and to change transports seamlessly._
 
-
-
-
-## .ini file change ## [to remove]
-1. 
-``` xml
-[IAP] 
-; defines the timeout for waiting the mobile app to reconnect between Bluetooth and USB transports change
-"AppTransportChangeTimer" = 500 ms
-```
-
-2. 
-```xml
-[IAP] 
-"AppTransportChangeTimerAddition" = 0ms
-Defines the timeout  for waiting of every mobile app to reconnect between Bluetooth and USB transports change in case the number of connected apps is more than one
-```
 ## Related Diagrams:
 
 N/A
