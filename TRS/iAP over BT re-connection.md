@@ -1,7 +1,7 @@
 ## Functional Requirements  
 
 1.  
-In case device was connected over Bluetooth and SDL received signal about USB connection of the same device
+In case device was connected over Bluetooth and SDL received signal about USB connection of the same device  
 SDL must:
 - start "AppTransportChangeTimer" + "AppTransportChangeTimerAddition"*N
 - after receiving switch signal from external system  
