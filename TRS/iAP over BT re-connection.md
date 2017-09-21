@@ -57,7 +57,7 @@ and USB connection was lost
 
 SDL must:
 - NOT start "AppTransportChangeTimer" + "AppTransportChangeTimerAddition"*N timer for reconnection  
-*Note:* In case of USB connection lost, SDL must proceed with unexpected disconnect flow 
+*Note:* In case of USB connection loss, SDL must proceed with unexpected disconnect flow 
 
 ## Non-Functional Requirements to SDL:
 
