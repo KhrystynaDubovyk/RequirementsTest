@@ -25,10 +25,10 @@ _Exception 1:_
 3.1.f SDL clears all data related to the app
 
 _Exception 2:_  
-4.1.a SDL **doesn't validate** "hashID" received with RegisterAppInterface request  
+4.1.a SDL **doesn't validate** "hashID" received with `<RegisterAppInterface>`  request  
 4.1. b SDL responds RESUME_FAILED, success:true to the app  
 4.1. c SDL clears all data created/stored by this app  
-4.1.d SDL sends to HMI following RPCs
+4.1.d SDL sends to HMI following RPCs  
 OnButtonSubscription (isSubscribed=false)  
 UnsubscribeVehicleData  
 UnsubscribeWayPoints
