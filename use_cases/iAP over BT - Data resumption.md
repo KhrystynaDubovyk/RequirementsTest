@@ -45,7 +45,7 @@ _Expected:_
 1. SDL notifies HMI about app being unregistred 
 2. SDL receives `<RegisterAppInterface>` request 
 3. SDL validates "hashID" received with RegisterAppInterface request
-4. SDL sends OnAppRegistered (resumeVRGrammars=true) to HMI
+4. SDL sends `<OnAppRegistered>` (resumeVRGrammars=true) to HMI
 5. SDL sends succesful `<RegisterAppInterface>` response to the app
 6. SDL performs data resumption
 
