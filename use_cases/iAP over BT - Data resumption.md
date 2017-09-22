@@ -11,11 +11,21 @@ _Steps:_
 
 _Expected:_  
 2. SDL starts `<AppTransportChangeTimer> + <AppTransportChangeTimerAddition>*N` reconnection timer  
-3. SDL receives RegisterAppInterface request with valid "hashID" during timer  
-4. SDL sends succesful response to app  
-5. SDL keeps all data created/stored by this app
+3. SDL receives RegisterAppInterface request before timer expires
+4. SDL validates "hashID" received with RegisterAppInterface request
+5. SDL sends succesful response to the app  
+6. SDL successfully resumes data for this app
 
 _Exception 1:_  
+ SDL receives `<RegisterAppInterface>` request with valid "hashID" **after** timer expiration  
+When `<AppTransportChangeTimer> + <AppTransportChangeTimerAddition>*N` reconnection timer
+ SDL notifies HMI about app being unregistred  
+ SDL removes all notifications from HMI that were saved during reconnection timer 
+ When the app re-registers SDL checks `<hashID>`
+it would be considered as a fresh registration.
+Since the app provides a valid hash id, SDL core will perform data resumption.
+
+_Exception 2:_  
 3.1.a SDL receives `<RegisterAppInterface>` request with **invalid** "hashID" or no "hashID" at all  
 3.1.b SDL responds RESUME_FAILED, success:true to the app    
 3.1.c SDL clears all data created/stored by this app  
@@ -28,12 +38,7 @@ DeleteSubMenu
 DeleteCommand  
 DeleteCommands for choiseSets (CreateInteractionChoiceSet)  
 
-_Exception 2:_  
-3.2.a SDL receives `<RegisterAppInterface>` request with valid "hashID" **after** timer expiration  
-3.2.b SDL notifies HMI about app being unregistred  
-3.2.c If the app re-registers it would be considered as a fresh registration.
-Since the app provides a valid hash id, SDL core will perform data resumption.
-
-
+Alt flo
+after timer with valid hash id
 
 **_Note:_**
