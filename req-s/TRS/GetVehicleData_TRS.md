@@ -26,7 +26,7 @@ respond with "DISALLOWED, success:false", "info: Requested parameters are disall
 
 
 4.
-In case mobile application GetVehicleData_request to SDL  
+In case mobile application sends GetVehicleData_request to SDL  
 with one and-or more allowed params and with one and-or more NOT-allowed params by Policies  
 
 SDL must:  
