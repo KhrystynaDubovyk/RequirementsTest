@@ -82,12 +82,12 @@ Note: in case SDL cannot parse 'method_name' from json then SDL must respond to 
 e.incorrect combination of params
 
 [19624]6. IGNORED  
-In case app already subscribed on a single or multiple <vehicleData>  
-and sends SubscribeVehicleData_request with all <vehicleData> subscribed by the application before  
+In case app already subscribed on a single or multiple `<vehicleData>`  
+and sends SubscribeVehicleData_request with all `<vehicleData>` subscribed by the application before  
 
 SDL must:  
 - not transfer a resuest to HMI  
-- respond with (IGNORED, success:false {<vehicleData>: DATA_ALREADY_SUBSCRIBED} ) to mobile app
+- respond with (IGNORED, success:false {`<vehicleData>`: DATA_ALREADY_SUBSCRIBED} ) to mobile app
 
 
 ## Non-Functional Requirements
