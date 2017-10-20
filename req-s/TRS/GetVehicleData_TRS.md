@@ -12,17 +12,35 @@ In case mobile application sends valid GetVehicleData_request to SDL
 
 and this request is NOT allowed by Policies
 
-SDL must:
+SDL must:  
 respond "DISALLOWED, success:false" to mobile application
 
 3. 
 
-In case mobile application GetVehicleData_request with one and-or more allowed params and with one and-or more NOT-allowed params by Policies  
+In case mobile application GetVehicleData_request to SDL 
+with one and-or more allowed params and with one and-or more NOT-allowed params by Policies  
 
 SDL must:  
 - transfer GetVehicleData_request to HMI with allowed params only  
 - ignore the NOT-allowed params  
 - respond with "ResultCode: <applicable-result-code>, success: <applicable flag>" + "info" parameter listing the params disallowed by policies to mobile app
+
+4. 
+In case mobile application sends GetVehicleData_request to SDL  
+- with wrong json syntax 
+- with wrong type parameters (including parameters of the structures)
+- without parameters defined as mandatory in mobile API
+
+SDL must:  
+respond "INVALID_DATA, success:"false" to mobile application
+
+5. REJECTED
+
+6. TOO_MANY_PENDING_REQUESTS
+
+7. GENERIC_ERROR
+
+8. APPLICATION_NOT_REGISTRED 
 
 
 ## Non-Functional Requirements
