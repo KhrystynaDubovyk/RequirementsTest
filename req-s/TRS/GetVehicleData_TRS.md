@@ -34,13 +34,16 @@ In case mobile application sends GetVehicleData_request to SDL
 SDL must:  
 respond "INVALID_DATA, success:"false" to mobile application
 
-5. REJECTED
 
-6. TOO_MANY_PENDING_REQUESTS
+5. 
+In case mobile application sends GetVehicleData_request to SDL and:
+- either unknown issue happened 
+- either something went wrong
 
-7. GENERIC_ERROR
+SDL must:
+respond with "GENERIC_ERROR, success:"false" to mobile application
 
-8. APPLICATION_NOT_REGISTRED 
+
 
 
 ## Non-Functional Requirements
