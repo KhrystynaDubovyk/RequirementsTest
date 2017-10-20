@@ -3,7 +3,7 @@
 1.
 In case mobile application sent valid UnsubscribeVehicleData_request to SDL
 - and this request is allowed by Policies
-- and there are no other applications subscribed on waypoints change npotifications
+- and there are no other applications subscribed on vehicle info npotifications
 
 SDL must: 
 - transfer UnsubscribeVehicleData_request to HMI
@@ -12,7 +12,7 @@ SDL must:
 2.
 In case mobile application sent valid UnsubscribeVehicleData_request to SDL
 - and this request is allowed by Policies
-- and there are other applications still subscribed on waypoints change npotifications
+- and there are other applications still subscribed on vehicle info npotifications
 
 SDL must: 
 - unsubscribe requesting application from waypoints change notifications
