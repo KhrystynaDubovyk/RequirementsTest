@@ -40,7 +40,7 @@ In case mobile application sends GetVehicleData_request to SDL and:
 - either unknown issue happened 
 - either something went wrong
 
-SDL must:
+SDL must:  
 respond with "GENERIC_ERROR, success:"false" to mobile application
 
 
