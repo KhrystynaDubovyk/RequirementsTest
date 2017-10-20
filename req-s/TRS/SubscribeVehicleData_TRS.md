@@ -1,7 +1,7 @@
 ## Functional Requirements
 
 1.
-In case mobile application sent valid and allowed by Policies SubscribeVehicleData_request to SDL
+In case mobile application sends valid and allowed by Policies SubscribeVehicleData_request to SDL
 
 SDL must: 
 - transfer SubscribeVehicleData_request to HMI
@@ -66,27 +66,28 @@ SDL must:
 respond with "GENERIC_ERROR, success:"false" to mobile application
 
 [15509]
-In case 
-HMI sends invalid response by any reason that SDL must transfer to mobile app
-SDL must: 
-log the error internally
-respond GENERIC_ERROR (success:false, info: "Invalid message received from vehicle") to mobile app
+In case HMI sends invalid response by any reason that SDL must transfer to mobile app
 
-Information: 
-1. Invalid response means the response contains:
-a. params out of bounds
-b. mandatory params are missing
-c. params of wrong type
-d. invalid json
-Note: in case SDL cannot parse 'method_name' from json then SDL must respond to mobile app GENERIC_ERROR, info: "'%component-name%' component does not respond"
+SDL must:  
+- log the error internally  
+- respond GENERIC_ERROR (success:false, info: "Invalid message received from vehicle") to mobile app  
+
+Information:  
+1. Invalid response means the response contains:  
+a. params out of bounds  
+b. mandatory params are missing  
+c. params of wrong type  
+d. invalid json  
+Note: in case SDL cannot parse 'method_name' from json then SDL must respond to mobile app GENERIC_ERROR, info: "'%component-name%' component does not respond"  
 e.incorrect combination of params
 
-[19624]6. IGNORED
-In case app already subscribed on a single or multiple <vehicleData>
-and sends SubscribeVehicleData_request with all <vehicleData> subscribed by the application before
-SDL must:
-1) not transfer a resuest to HMI
-2) respond with (IGNORED, success:false {<vehicleData>: DATA_ALREADY_SUBSCRIBED} ) to mobile app
+[19624]6. IGNORED  
+In case app already subscribed on a single or multiple <vehicleData>  
+and sends SubscribeVehicleData_request with all <vehicleData> subscribed by the application before  
+
+SDL must:  
+- not transfer a resuest to HMI  
+- respond with (IGNORED, success:false {<vehicleData>: DATA_ALREADY_SUBSCRIBED} ) to mobile app
 
 
 ## Non-Functional Requirements
