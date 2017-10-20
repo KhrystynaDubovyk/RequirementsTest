@@ -16,24 +16,18 @@ SDL must:
 
 respond "DISALLOWED, success:false" to mobile application
 
+
 3.
-In case mobile application sent valid and allowed by Policies SubscribeVehicleData_request to SDL
+In case mobile application sends valid SubscribeVehicleData_request 
 
-and Navigation interface is not available on HMI
+trying to subscribe the parameter the application has already subscribed for (even if the request contains at least one non-subscribed parameter)
 
-SDL must:
+SDL must: 
+- ignore alredy subscribed items and transfer not subscribed params of SubscribeVehicleData to HMI
+- get the response with general_result_Code_from_HMI and newly-subscribed parameters with their correponding individual-result-codes from HMI 
+- respond to mobile application with "ResultCode: IGNORED, success: <applicable flag>" + "info" parameter+ all parameters and their correponding individual result codes got from HMI and all ignored parameter(s) with the individual result code(s): DATA_ALREADY_SUBSCRIBED for items ignored by SDL
 
-respond UNSUPPORTED_RESOURCE, success:false to mobile application without transferring this request to HMI
 
-4.
-In case mobile application is already subscribed on WayPoints-related parameters
-
-and the same mobile application sends SubscribeWayPoints_request to SDL
-
-SDL must:
-
-- respond "IGNORED, success:false" to mobile application
-- keep application subscribed on waypoints change notifications
 
 5.
 In case mobile application is subscribed on WayPoints-related parameters unexpectedly disconnects 
