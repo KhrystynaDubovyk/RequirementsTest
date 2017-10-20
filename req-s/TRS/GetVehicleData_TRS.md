@@ -17,6 +17,15 @@ respond "DISALLOWED, success:false" to mobile application
 
 3. 
 
+In case mobile application sends GetVehicleData_request to SDL
+- this request is allowed by Policies for this mobile application
+- "parameters" field is empty in PolicyTable for GetVehicleData RPC
+
+SDL must:
+respond with "DISALLOWED, success:false", "info: Requested parameters are disallowed by Policies" to mobile app
+
+
+4.
 In case mobile application GetVehicleData_request to SDL 
 with one and-or more allowed params and with one and-or more NOT-allowed params by Policies  
 
@@ -25,7 +34,7 @@ SDL must:
 - ignore the NOT-allowed params  
 - respond with "ResultCode: <applicable-result-code>, success: <applicable flag>" + "info" parameter listing the params disallowed by policies to mobile app
 
-4. 
+5. 
 In case mobile application sends GetVehicleData_request to SDL  
 - with wrong json syntax 
 - with wrong type parameters (including parameters of the structures)
@@ -35,15 +44,13 @@ SDL must:
 respond "INVALID_DATA, success:"false" to mobile application
 
 
-5. 
+6. 
 In case mobile application sends GetVehicleData_request to SDL and:
 - either unknown issue happened 
 - either something went wrong
 
 SDL must:  
 respond with "GENERIC_ERROR, success:"false" to mobile application
-
-
 
 
 ## Non-Functional Requirements
