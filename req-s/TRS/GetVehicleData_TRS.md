@@ -4,7 +4,7 @@
 In case mobile application sends valid and allowed by Policies GetVehicleData_request to SDL
 
 SDL must: 
-- 
+- transfer GetVehicleData_request to HMI
 - respond with `<resultCode>` received from HMI to mobile application
 
 2.
