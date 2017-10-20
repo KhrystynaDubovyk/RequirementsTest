@@ -47,7 +47,7 @@ respond "INVALID_DATA, success:"false" to mobile application
 6. 
 In case mobile application sends GetVehicleData_request to SDL and:
 - either unknown issue happened 
-- either something went wrong
+- or something went wrong
 
 SDL must:  
 respond with "GENERIC_ERROR, success:"false" to mobile application
