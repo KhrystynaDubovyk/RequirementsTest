@@ -1,16 +1,14 @@
 ## Functional Requirements
 
 1. 
-In case SDL received valid OnVehicleData notification from HMI
+In case mobile application has already subscribed on some vehicle data via SubscribeVehicleData_request  
 
-and this notification is allowed by Policies
+and this subscribed data was updated  
 
-SDL must:
+SDL must:  
 
-- store OnVehicleData notification internally
-- transfer this notification to all registered mobile applications successfully subscribed on waypoints-related data
+transfer OnVehicleData_notification (with updated vehicle data value) to subscribed mobile applications
 
-_Note:_ In case of receiving new OnVehicleData notification from HMI, SDL must rewrite previously saved notification and transfer new notification to all subscribed applications.
 
 2. 
 In case SDL received valid OnVehicleData notification from HMI
@@ -20,7 +18,19 @@ and this notification is NOT allowed by Policies
 SDL must:
 
 - log corresponding error internally
-- ignore this notification and not transfer it to subscribed mobile applications
+- ignore this notification and not transfer it to subscribed mobile applications  
+
+3.
+In case SDL receives OnVehicleData notification from HMI  
+
+and this notification is allowed by Policies for this mobile app  
+
+and "parameters" field is omited at PolicyTable for this notification  
+
+SDL must:  
+- transfer received notification with all parameters as is to mobile app  
+- respond with `<received_resultCode_from_HMI>` to mobile app
+
 
 ## Non-Functional Requirements
 1.
