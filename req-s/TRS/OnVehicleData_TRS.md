@@ -7,10 +7,25 @@ and this subscribed data was updated
 
 SDL must:  
 
-transfer OnVehicleData_notification (with updated vehicle data value) to subscribed mobile applications
+transfer OnVehicleData_notification (with updated vehicle data value) to subscribed mobile applications  
+
+2.  
+In case HMI sends invalid notification that SDL should transfer to mobile app  
+
+SDL must:  
+
+- log the issue  
+- ignore this notification  
+
+Invalid notifications means the notification contains:  
+a. params out of bounds or incorrect symbols (/t, /n, <whitespace>)  
+b. mandatory params are missing  
+c. params of wrong type  
+d. invalid json  
+e. incorrect combination of params
 
 
-2. 
+3. 
 In case SDL received valid OnVehicleData notification from HMI
 
 and this notification is NOT allowed by Policies
@@ -20,7 +35,7 @@ SDL must:
 - log corresponding error internally
 - ignore this notification and not transfer it to subscribed mobile applications  
 
-3.
+4.
 In case SDL receives OnVehicleData notification from HMI  
 
 and this notification is allowed by Policies for this mobile app  
@@ -32,7 +47,10 @@ SDL must:
 - respond with `<received_resultCode_from_HMI>` to mobile app
 
 
-## Non-Functional Requirements
+## Non-Functional Requirements  
+Additions to mobile API, HMI_API  
+Changes to enums and functions should be applied  
+
 1.
 ```
 <function name="OnVehicleData" functionID="OnVehicleDataID" messagetype="notification">
