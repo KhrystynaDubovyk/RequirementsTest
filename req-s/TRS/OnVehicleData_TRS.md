@@ -23,28 +23,37 @@ SDL must:
 - ignore this notification and not transfer it to subscribed mobile applications
 
 ## Non-Functional Requirements
-
-a. "OnVehicleData" notification must be added to "Notifications" in PolicyTable:
-
-```json
-"Notifications": {
-          "rpcs": {
-"OnWayPointChange": {
-              "hmi_levels": [
-                "BACKGROUND",
-                "FULL",
-                "LIMITED"
-              ],
-            }
-      }
-}
+1.
 ```
+<function name="OnVehicleData" functionID="OnVehicleDataID" messagetype="notification">
+            :
+    <param name="fuelRange" type="FuelRange" minsize="0" maxsize="100" array="true" mandatory="false">
+        <description>The estimate range in KM the vehicle can travel based on fuel level and consumption</description>
+    </param>
+</function>
+```
+```xml
+<enum name="VehicleDataType">
+            :
+    <element name="VEHICLEDATA_ENGINEOILLIFE" />
+</enum>
+```
+2.
+```
+<function name="OnVehicleData" functionID="OnVehicleDataID" messagetype="notification">
+            :
+    <param name="engineOilLife" type="Float" minvalue="0" maxvalue="100" mandatory="false">
+        <description>The estimated percentage of remaining oil life of the engine.</description>
+    </param>
+</function>
+```
+
 
 ## Diagram
 
 OnVehicleData
 
-![OnVehicleData](https://github.com/smartdevicelink/sdl_requirements/blob/OnWayPointChange/detailed_docs/accessories/OnVehicleData.png)
+![](.png)
 
 
 
